@@ -18,7 +18,7 @@ configuration.load do
   
   namespace :deploy do
     desc "Keep only 3 releases"
-    task :after_default do
+    after "deploy:default" do
       cleanup
     end
     
