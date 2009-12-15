@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "gorilla-capistrano-recipes"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Common capistrano recipes for Gorilla sites}
+    gem.description = %Q{This gem allows for a clean Capfile by setting up common capistrano stuff such as Git preferences, Radiant specifics, db dump helpers, passenger or lighty restart, ...}
     gem.email = "benny@gorilla-webdesign.be"
     gem.homepage = "http://github.com/jomz/gorilla-capistrano-recipes"
     gem.authors = ["Benny Degezelle"]

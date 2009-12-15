@@ -2,31 +2,32 @@
 
 This gem holds some capistrano presets that we use for all of our projects.
 Preset configs for git, lighttpd & passenger, radiant stuff, ...
-The radiant-related recipes are copied from http://github.com/ehaselwanter/radiant-capistrano-extension
+
+The radiant-related recipes are mostly copied from http://github.com/ehaselwanter/radiant-capistrano-extension
 
 == How-To
 
 Keep your Capfile clean like this:
 
-load 'deploy' if respond_to?(:namespace) # cap2 differentiator
+  load 'deploy' if respond_to?(:namespace) # cap2 differentiator
 
-set :user, 'user'
-set :password, "password"
-set :application, "www"
+  set :user, 'user'
+  set :password, "password"
+  set :application, "www"
 
-set :repository, "user@your_git_host:git/project.git"
-set :scm_password, "password"
+  set :repository, "user@your_git_host:git/project.git"
+  set :scm_password, "password"
 
-server "your_app_host", :app, :web, :db, :primary => true
+  server "your_app_host", :app, :web, :db, :primary => true
 
-DatabaseYml = %Q{# By capistrano
-production:
-  adapter: mysql
-  database: gorilla
-  username: gorilla
-  password: password
-  host: your_db_host
-}
+  DatabaseYml = %Q{# By capistrano
+  production:
+    adapter: mysql
+    database: gorilla
+    username: gorilla
+    password: password
+    host: your_db_host
+  }
 
 load 'lib/gorilla-capistrano-recipes/deploy'
 load 'lib/gorilla-capistrano-recipes/mysql'
