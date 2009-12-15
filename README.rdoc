@@ -29,10 +29,10 @@ Keep your Capfile clean like this:
     host: your_db_host
   }
 
-  load 'lib/gorilla-capistrano-recipes/deploy'
-  load 'lib/gorilla-capistrano-recipes/mysql'
-  load 'lib/gorilla-capistrano-recipes/passenger'
-  load 'lib/gorilla-capistrano-recipes/radiant'
+  require 'gorilla-capistrano-recipes/deploy'
+  require 'gorilla-capistrano-recipes/mysql'
+  require 'gorilla-capistrano-recipes/passenger'
+  require 'gorilla-capistrano-recipes/radiant'
 
 == Note on Patches/Pull Requests
  
