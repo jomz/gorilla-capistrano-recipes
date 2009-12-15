@@ -1,1 +1,1 @@
-gem 'capistrano', '>= 2.4.3'   # load v2.4.3 or higher
+require 'capistrano', '>= 2.4.3'   # load v2.4.3 or higher
