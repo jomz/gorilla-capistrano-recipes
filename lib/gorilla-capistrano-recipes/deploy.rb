@@ -5,7 +5,7 @@ configuration.load do
   
   default_run_options[:pty] = true
   set :ssh_options, { :forward_agent => true}
-  set :deploy_to, "/home/#{user}/apps/#{application}"
+  set(:deploy_to) { "/home/#{user}/apps/#{application}" }
   set :use_sudo, false
   set :group_writable, false
   set :keep_releases, 3
@@ -35,7 +35,7 @@ configuration.load do
     desc "Create all config files in shared/config"
     task :copy_database_config do
       run "mkdir -p #{shared_path}/config"
-      put DatabaseYml, "#{shared_path}/config/database.yml"
+      put database_yml, "#{shared_path}/config/database.yml"
     end
 
     desc "Link in the shared config files"
