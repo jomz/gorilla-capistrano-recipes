@@ -1,8 +1,7 @@
 configuration = Capistrano::Configuration.respond_to?(:instance) ? Capistrano::Configuration.instance(:must_exist) : Capistrano.configuration(:must_exist)
 
 configuration.load do
-  require "capistrano/deepmodules"
-  
+  require "gorilla-capistrano-recipes/deepmodules"  
   default_run_options[:pty] = true
   set :ssh_options, { :forward_agent => true}
   set(:deploy_to) { "/home/#{user}/apps/#{application}" }
