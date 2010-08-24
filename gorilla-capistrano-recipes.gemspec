@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{gorilla-capistrano-recipes}
-  s.version = "0.1.5"
+  s.version = "0.1.6"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Benny Degezelle"]
-  s.date = %q{2009-12-15}
+  s.date = %q{2010-08-24}
   s.description = %q{This gem allows for a clean Capfile by setting up common capistrano stuff such as Git preferences, Radiant specifics, db dump helpers, passenger or lighty restart, ...}
   s.email = %q{benny@gorilla-webdesign.be}
   s.extra_rdoc_files = [
@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
      "VERSION",
      "gorilla-capistrano-recipes.gemspec",
      "lib/gorilla-capistrano-recipes.rb",
+     "lib/gorilla-capistrano-recipes/deepmodules.rb",
      "lib/gorilla-capistrano-recipes/deploy.rb",
      "lib/gorilla-capistrano-recipes/lighttpd.rb",
      "lib/gorilla-capistrano-recipes/mysql.rb",
@@ -37,7 +38,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/jomz/gorilla-capistrano-recipes}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.5}
+  s.rubygems_version = %q{1.3.7}
   s.summary = %q{Common capistrano recipes for Gorilla sites}
   s.test_files = [
     "test/helper.rb",
@@ -48,7 +49,7 @@ Gem::Specification.new do |s|
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
-    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
+    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_development_dependency(%q<thoughtbot-shoulda>, [">= 0"])
     else
       s.add_dependency(%q<thoughtbot-shoulda>, [">= 0"])
