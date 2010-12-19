@@ -15,12 +15,9 @@ configuration.load do
   set :git_shallow_clone, 1
   set :git_enable_submodules, 1
   
+  after "deploy", "deploy:cleanup"
+  
   namespace :deploy do
-    desc "Keep only 3 releases"
-    after "deploy:default" do
-      cleanup
-    end
-    
     desc "clear cached copy, e.g. when changing submodule urls"
     task :clear_cached_copy do
       run <<-CMD
